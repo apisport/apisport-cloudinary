@@ -47,7 +47,7 @@ export default function MitraDev() {
                 </div>
 
                 <div className="row">
-                    <div class="col-xs-12" height={'600px'}>
+                    <div class="col-xs-12" height={'800px'}>
                     <table className="table table-responsive my-0" id="dataTable">
                         <thead>
                             <tr>

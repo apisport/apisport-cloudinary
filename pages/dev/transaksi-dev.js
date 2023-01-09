@@ -48,7 +48,7 @@ export default function MitraDev() {
                     <h1>Data Transaksi</h1>
                 </div>
                 <div className="row">
-                    <div class="col-xs-12" height={'600px'}>
+                    <div class="col-xs-12" height={'800px'}>
                         <table className="table my-0" id="dataTable">
                             <thead>
                                 <tr>
