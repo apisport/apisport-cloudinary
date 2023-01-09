@@ -36,7 +36,7 @@ export default function MitraDev() {
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     //Fixed Pagintion CurrentPosts hapus filter di bawah
-    let currentPosts = searchArr.slice(indexOfFirstPost, indexOfLastPost)
+    let currentPosts = searchArr
     //Fixed Pagination CurrentPosts
     const howManyPages = Math.ceil(searchArr.length / postsPerPage)
     //Tambahan Pagination Current Post Map
@@ -66,6 +66,7 @@ export default function MitraDev() {
                                 <h2>Tidak ada data Mitra ditemukan</h2>
                             ) : (
                                 <>
+                                    {currentPosts.map((data, index) => (
                                         <tbody>
                                             <tr>
                                                 <td>{index + 1}</td>
@@ -95,6 +96,7 @@ export default function MitraDev() {
                                                 </td>
                                             </tr>
                                         </tbody>
+                                    ))}
                                 </>
                             )}
 
