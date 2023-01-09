@@ -94,6 +94,7 @@ export default function FavoritDev() {
                                                         DP: data.DP,
                                                         namaAdmin: data.namaAdmin,
                                                         noWaAdmin: data.noWaAdmin,
+                                                        kecamatan: data.kecamatan,
                                                         emailReq: data.email,
                                                         fotoVenueStringify: JSON.stringify(data.fotoVenue),
                                                         objectId: data._id

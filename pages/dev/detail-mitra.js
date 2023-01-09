@@ -19,6 +19,7 @@ export default function DetailMitra() {
         namaAdmin,
         noWaAdmin,
         emailReq,
+        kecamatan,
         fotoVenueStringify,
         objectId,
         urlVenue
@@ -80,6 +81,7 @@ export default function DetailMitra() {
             kategori,
             hariOperasional,
             jamOperasional,
+            kecamatan,
             fasilitas,
             opsiBayar,
             rekening,

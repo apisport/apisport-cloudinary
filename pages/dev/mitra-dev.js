@@ -92,6 +92,7 @@ export default function MitraDev() {
                                                         namaAdmin: data.namaAdmin,
                                                         noWaAdmin: data.noWaAdmin,
                                                         emailReq: data.email,
+                                                        kecamatan: data.kecamatan,
                                                         fotoVenueStringify: JSON.stringify(data.fotoVenue),
                                                         urlVenue: data.urlVenue,
                                                         objectId: data._id
