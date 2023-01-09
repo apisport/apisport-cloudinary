@@ -66,7 +66,6 @@ export default function MitraDev() {
                                 <h2>Tidak ada data Mitra ditemukan</h2>
                             ) : (
                                 <>
-                                    {currentPosts.map((data, index) => (
                                         <tbody>
                                             <tr>
                                                 <td>{index + 1}</td>
@@ -96,7 +95,6 @@ export default function MitraDev() {
                                                 </td>
                                             </tr>
                                         </tbody>
-                                    ))}
                                 </>
                             )}
 

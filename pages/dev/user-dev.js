@@ -64,7 +64,6 @@ export default function UserDev() {
                             <h2>Tidak ada data Favorit ditemukan</h2>
                         ) : (
                             <>
-                                {currentPosts.map((data, index) => (
                                     <tbody>
                                         <tr>
                                             <td>{index + 1}</td>
@@ -96,7 +95,7 @@ export default function UserDev() {
                                             </td>
                                         </tr>
                                     </tbody>
-                                ))}
+                                
                             </>
                         )}
 
