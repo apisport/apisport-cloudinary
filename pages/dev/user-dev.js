@@ -48,7 +48,7 @@ export default function UserDev() {
                 </div>
                 {/* Tambahan Pagination Make Sure Math.ceil adalah searchArr.length */}
                 <div class="row">
-                    <div class="col-xs-12">
+                    <div class="col-xs-12" height={'800px'}>
                         <table className="table table-responsive table-wrapper" id="dataTable">
                             <thead>
                                 <tr>
