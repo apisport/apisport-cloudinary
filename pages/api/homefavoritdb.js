@@ -44,6 +44,7 @@ async function getFavoritHome(req, res) {
                     hariOperasional : 1,
                     jamOperasional: 1,
                     fotoVenue: 1,
+                    kecamatan: 1,
                     lapanganVenue: {
                         hargaPagi: 1
                     }
