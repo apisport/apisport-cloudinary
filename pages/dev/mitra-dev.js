@@ -95,6 +95,7 @@ export default function MitraDev() {
                                                         kecamatan: data.kecamatan,
                                                         fotoVenueStringify: JSON.stringify(data.fotoVenue),
                                                         urlVenue: data.urlVenue,
+                                                        srcMap: data.srcMap,
                                                         objectId: data._id
                                                     }
 

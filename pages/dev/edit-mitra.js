@@ -25,6 +25,7 @@ export default function EditMitra() {
         emailReq,
         fotoVenueStringify,
         urlVenue,
+        srcMap,
         objectId,
         namaVenueLama
     } = router.query
@@ -40,6 +41,7 @@ export default function EditMitra() {
     const [_jamOperasional, setJamOperasional] = useState('');
     const [_fasilitas, setFasilitas] = useState('');
     const [_urlVenue, setUrlVenue] = useState('');
+    const [_srcMap, setSrcMap] = useState('');
     const [_opsiBayar, setOpsiBayar] = useState([]);
     const [_rekening, setRekening] = useState([]);
     const [_DP, setDP] = useState(0);
@@ -96,7 +98,10 @@ export default function EditMitra() {
 
         } if (typeof fasilitas == 'string') {
             setFasilitas(fasilitas)
-        } if (typeof opsiBayarStringify == 'string') {
+        }if (typeof srcMap == 'string') {
+            setSrcMap(srcMap)
+        }  
+        if (typeof opsiBayarStringify == 'string') {
             setOpsiBayar(Object.assign(_opsiBayar, JSON.parse(opsiBayarStringify)))
             checkOtomatis()
         } if (typeof rekeningStringify == 'string') {
@@ -195,6 +200,7 @@ export default function EditMitra() {
                     noWaAdmin: _noWaAdmin,
                     fotoVenue: _fotoVenue,
                     urlVenue: _urlVenue,
+                    srcMap: _srcMap,
                     objectId: objectId,
                     namaVenueLama: namaVenueLama
                 }),
@@ -408,6 +414,16 @@ export default function EditMitra() {
                                 <input type="text" className="form-control"
                                     value={_instagram}
                                     onChange={(e) => setInstagram(e.target.value)}
+                                />
+                            </div>
+                        </div>
+                        <div className="row mt-2">
+                            <div className="mt-2 col-md-12">
+                                <label className="labels">Google Map</label><i style={{ color: '#ff0000', fontSize: 'larger' }}>*</i>
+                                <input type="text" className="form-control"
+                                    required
+                                    value={_srcMap}
+                                    onChange={(e) => setSrcMap(e.target.value)}
                                 />
                             </div>
                         </div>

@@ -22,8 +22,9 @@ export default function DetailMitra() {
         kecamatan,
         fotoVenueStringify,
         objectId,
-        urlVenue
-     } = router.query
+        urlVenue,
+        srcMap
+    } = router.query
 
     const [error, setError] = useState('');
     const [message, setMessage] = useState('');
@@ -64,7 +65,7 @@ export default function DetailMitra() {
 
     const handlePost = async (e) => {
         e.preventDefault();
-        
+
         // fields check
         if (!namaVenue || !namaPemilikVenue || !alamat || !noWa || !instagram || !kategori || !hariOperasional ||
             !jamOperasional || !fasilitas || !opsiBayar || !namaAdmin || !noWaAdmin || !email || !fotoVenue) {
@@ -90,7 +91,8 @@ export default function DetailMitra() {
             noWaAdmin,
             email,
             fotoVenue,
-            urlVenue
+            urlVenue,
+            srcMap
         };
         // save the post
         let response = await fetch('/api/favoritdb', {
@@ -171,6 +173,17 @@ export default function DetailMitra() {
                                 />
                             </div>
                         </div>
+                        <div className="row mt-2">
+                            <div className="mt-2 col-md-12">
+                                <label className="labels">Google Map</label><i style={{ color: '#ff0000', fontSize: 'larger' }}>*</i>
+                                <input type="text" className="form-control"
+                                    required
+                                    value={`${srcMap}`}
+                                    readOnly
+                                />
+                            </div>
+                        </div>
+
                         <div className="row mt-2">
                             <div className="mt-2 col-md-12">
                                 <label className="labels">Kategori</label><i style={{ color: '#ff0000', fontSize: 'larger' }}>*</i>
@@ -328,6 +341,7 @@ export default function DetailMitra() {
                                     emailReq: email,
                                     fotoVenueStringify: JSON.stringify(fotoVenue),
                                     urlVenue: urlVenue,
+                                    srcMap: srcMap,
                                     objectId: objectId
                                 }
 

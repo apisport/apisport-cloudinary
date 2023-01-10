@@ -44,6 +44,7 @@ async function updateMitra(req, res) {
         fotoVenue,
         objectId,
         urlVenue,
+        srcMap,
         namaVenueLama } = req.body
     var ObjectId = require('mongodb').ObjectId;
     const convertedObjectId = new ObjectId(objectId);
@@ -70,6 +71,7 @@ async function updateMitra(req, res) {
                     'rekening': rekening,
                     "DP": DP,
                     "urlVenue": urlVenue,
+                    "srcMap": srcMap,
                     'namaAdmin': namaAdmin,
                     'noWaAdmin': noWaAdmin,
                     'fotoVenue': fotoVenue
@@ -96,6 +98,7 @@ async function updateMitra(req, res) {
                     'namaAdmin': namaAdmin,
                     'noWaAdmin': noWaAdmin,
                     "urlVenue": urlVenue,
+                    "srcMap": srcMap,
                     'fotoVenue': fotoVenue
                 }
             }
