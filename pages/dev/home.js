@@ -2,7 +2,14 @@ import { Router } from "next/router"
 
 export default function Homedev() {
   return (
-    <div><div>
+    <div>
+      <div className='row mt-3 d-flex justify-content-center' style={{ color: "black" }}>
+        <h5 className='d-flex justify-content-between'><b>Lokasi</b></h5>
+        <div className='row flex-row col-12 col-md-12'>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7897.795267222759!2d114.34528305390624!3d-8.213048999999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd1450173af3333%3A0xfdcddcb867d1d4cd!2sGOR%20ABC%20BADMINTON!5e0!3m2!1sen!2sid!4v1673331174477!5m2!1sen!2sid" style={{border: 0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+        </div>
+      </div>
+      <div>
 
       <main>
         <section className="py-2 text-center container">

@@ -7,13 +7,13 @@ import capital from "../components/Capitalize";
 export default function Detailvenue() {
   const fetcher = (...args) => fetch(...args).then((res) => res.json())
   const router = useRouter()
-  const {namaVenue} = router.query
+  const { namaVenue } = router.query
   const { data: data, error } = useSWR(`/api/detailvenuedb?namaVenueReq=${namaVenue}`, fetcher)
   let namaHasil = ''
   if (namaVenue) {
     namaHasil = namaVenue.split(" ").join("");
   }
-  
+
 
   if (!data) {
     return <div className="spinner"></div>
@@ -27,7 +27,7 @@ export default function Detailvenue() {
 
   return (
     <div className="container">
-      
+
       <h1 className="fw-bold fst-italic">{venue.infoVenue[0].namaVenue}</h1>
       <div className="row mb-4">
         <div className="col">
@@ -79,8 +79,8 @@ export default function Detailvenue() {
                   <span className="card-text" style={{ color: "black" }}><icon className='fa fa-calendar'></icon><b> {venue.infoVenue[0].hariOperasional}</b></span><br></br>
                   <span className="card-text" style={{ color: "black" }}><icon className='fa fa-clock-o'></icon> <b>{venue.infoVenue[0].jamOperasional}</b></span><br></br>
                   <span className="card-text" style={{ color: "black" }}><icon className='fa fa-map-marker'></icon> <b>{venue.infoVenue[0].kabupaten},{venue.infoVenue[0].kecamatan},{venue.infoVenue[0].alamat}</b></span><br></br>
-              <span className="card-text" style={{ color: "black" }}><icon className='fa fa-futbol'></icon><b> {venue.infoVenue[0].kategori}</b></span><br></br>
-                  <span className="card-text text-muted" style={{ color: "black" }}><strong>Harga mulai dari </strong><br></br><span style={{ color: "green" }}><b>{venue.infoLapangan.length === 0 ? ('Tidak ada data lapangan tersedia') : (rupiah( venue.infoLapangan[0].hargaPagi ))}</b></span></span>
+                  <span className="card-text" style={{ color: "black" }}><icon className='fa fa-futbol'></icon><b> {venue.infoVenue[0].kategori}</b></span><br></br>
+                  <span className="card-text text-muted" style={{ color: "black" }}><strong>Harga mulai dari </strong><br></br><span style={{ color: "green" }}><b>{venue.infoLapangan.length === 0 ? ('Tidak ada data lapangan tersedia') : (rupiah(venue.infoLapangan[0].hargaPagi))}</b></span></span>
                 </div>
               </div>
               {/* END ROW */}
@@ -107,7 +107,7 @@ export default function Detailvenue() {
 
       </div>
       <div className='row'>
-        <a  style={{ color: "black" }}>
+        <a style={{ color: "black" }}>
           <h5 className='d-flex justify-content-between'><b> Fasilitas</b>
           </h5>
         </a>
@@ -118,7 +118,7 @@ export default function Detailvenue() {
         </div>
       </div>
       <div className='row mt-3' style={{ color: "black" }}><b>
-       
+
         <h5 className='d-flex justify-content-between'><b>Sosial Media</b></h5>
         <div>
           <div className="d-flex justify-content-between" >
@@ -127,8 +127,8 @@ export default function Detailvenue() {
             </a>
           </div>
           <div className="d-flex justify-content-between mt-3" >
-            <a className='btn text-white'  href={`https://wa.me/62${venue.infoVenue[0].noWa}`}>
-              <span className='mb-2' style={{ fontSize: '20px',color:"black" }}><b><icon className='fa fa-whatsapp' /></b> {venue.infoVenue[0].noWa}</span>
+            <a className='btn text-white' href={`https://wa.me/62${venue.infoVenue[0].noWa}`}>
+              <span className='mb-2' style={{ fontSize: '20px', color: "black" }}><b><icon className='fa fa-whatsapp' /></b> {venue.infoVenue[0].noWa}</span>
             </a>
           </div>
         </div></b>
@@ -147,6 +147,15 @@ export default function Detailvenue() {
           )}
         </div>
       </div>
+      {venue.infoVenue[0].srcMap &&
+        <div className='row mt-3 d-flex justify-content-center' style={{ color: "black" }}>
+          <h5 className='d-flex justify-content-between'><b>Lokasi</b></h5>
+          <div className='row flex-row col-12 col-md-12'>
+            <iframe src={venue.infoVenue[0].srcMap} style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+          </div>
+        </div>
+      }
+
 
 
 
